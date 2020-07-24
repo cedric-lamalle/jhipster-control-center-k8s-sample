@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+    name: sample-app-one
+build:
+    artifacts:
+        - image: cedriclamalle/control-center-sample-one
+          jib: {}
+
+deploy:
+    kubectl:
+        manifests:
+            - target/classes/META-INF/dekorate/kubernetes.yml

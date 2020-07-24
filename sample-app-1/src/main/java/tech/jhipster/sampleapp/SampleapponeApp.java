@@ -1,5 +1,7 @@
 package tech.jhipster.sampleapp;
 
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
+import io.dekorate.kubernetes.annotation.Label;
 import tech.jhipster.sampleapp.config.ApplicationProperties;
 
 import io.github.jhipster.config.DefaultProfileUtil;
@@ -21,6 +23,7 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ApplicationProperties.class})
+@KubernetesApplication(labels = @Label(key="tech.jhipster-control-center/enabled", value = "true"))
 public class SampleapponeApp {
 
     private static final Logger log = LoggerFactory.getLogger(SampleapponeApp.class);

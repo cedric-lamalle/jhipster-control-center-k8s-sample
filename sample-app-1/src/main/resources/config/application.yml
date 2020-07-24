@@ -53,6 +53,8 @@ management:
   health:
     mail:
       enabled: false # When using the MailService, configure an SMTP server and set this to true
+    diskspace:
+      enabled: false
   metrics:
     export:
       # Prometheus is the default metrics backend

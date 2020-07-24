@@ -70,6 +70,7 @@
         <junit.utReportFolder>${project.testresult.directory}/test</junit.utReportFolder>
         <junit.itReportFolder>${project.testresult.directory}/integrationTest</junit.itReportFolder>
         <!-- jhipster-needle-maven-property -->
+        <dekorate.version>1.0.1</dekorate.version>
     </properties>
 
     <dependencyManagement>
@@ -252,6 +253,11 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>kubernetes-spring-starter</artifactId>
+            <version>${dekorate.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -366,6 +372,11 @@
                                 <version>${mapstruct.version}</version>
                             </path>
                             <!-- jhipster-needle-maven-add-annotation-processor -->
+                            <path>
+                                <groupId>io.dekorate</groupId>
+                                <artifactId>kubernetes-spring-starter</artifactId>
+                                <version>${dekorate.version}</version>
+                            </path>
                         </annotationProcessorPaths>
                     </configuration>
                 </plugin>
